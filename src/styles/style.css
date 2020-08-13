@@ -1,0 +1,169 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   text-decoration: none;
+}
+
+
+
+.navbar {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   background-color: #032541;
+   padding: 10px;
+   color: rgb(255, 255, 255);
+}
+
+.movie {
+   width: 200px;
+}
+
+.title {
+   display: flex;
+}
+
+.navbar .title .text{
+   font-size: 40px;
+}
+
+.link {
+   color: white;
+}
+
+.nowplaying {
+   padding: 20px 0px 0px 0px;
+}
+
+.nowplaying .nowplayingmovies{
+   display: grid;
+   grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+   gap: 10px;
+   width: 98%;
+   margin: auto;
+}
+
+.nowplaying .nowplayingmovies img{
+   width: 200px;
+   display: block;
+   margin: auto;
+   border-radius: 20px;
+}
+
+p {
+   text-align: center;
+}
+
+form{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+input {
+   outline: none;
+   padding: 7px 10px;
+   border-radius: 5px;
+   border: none;
+}
+
+form img {
+   width: 20px;
+}
+
+button {
+   border-radius: 3px;
+   outline: none;
+   border: none;
+   padding:3px;
+   margin-left: 3px;
+   cursor: pointer;
+}
+
+.links {
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.burger {
+   display: flex;
+   flex-direction: column;
+   height: 20px;
+   justify-content: space-around;
+   border-radius: 3px;
+   align-items: center;
+   cursor: pointer;
+   display: none;
+}
+
+.line {
+   width: 25px;
+   height: 3px;
+   background-color: white;
+}
+
+.movie {
+   width: 100%;
+   display: flex;
+}
+
+.movie img {
+   width: 400px;
+}
+
+.details {
+   background-color: #84a9ac;
+}
+
+.details div {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin-top: 20px;
+}
+.prop {
+   width: 30%;
+   text-align: center;
+   font-size: 18px;
+}
+.value {
+   width: 70%;
+}
+
+
+@media screen and (max-width:700px) {
+   body {
+      width: 100%;
+      overflow-x: hidden;
+   }
+   
+   .show {
+      transform: translateX(100%);
+   }
+
+   .cross .line1{
+      transform: rotate(45deg) translateX(10px);
+   }
+   .cross .line2{
+      opacity: 0;
+   }
+   .cross .line3{
+      transform: rotate(-45deg) translate(9px);
+   }
+   
+   .links {
+      position: absolute;
+      height: 200px;
+      flex-direction: column;
+      top: 70px;
+      background-color: #032541;
+   }
+   .burger {
+      display: flex;
+   }
+   
+   
+}
