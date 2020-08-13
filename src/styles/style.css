@@ -101,7 +101,7 @@ button {
 
 .line {
    width: 25px;
-   height: 3px;
+   height: 2px;
    background-color: white;
 }
 
@@ -115,7 +115,7 @@ button {
 }
 
 .details {
-   background-color: #84a9ac;
+   background-color: #d8d8d8;
 }
 
 .details div {
@@ -128,6 +128,7 @@ button {
    width: 30%;
    text-align: center;
    font-size: 18px;
+   color: rgb(0, 4, 255);
 }
 .value {
    width: 70%;
@@ -158,7 +159,7 @@ button {
       position: absolute;
       height: 200px;
       flex-direction: column;
-      top: 70px;
+      top: 68px;
       background-color: #032541;
    }
    .burger {
@@ -166,4 +167,13 @@ button {
    }
    
    
+}
+
+@media screen and (max-width:850px){
+   .movie {
+      flex-direction: column;
+   }
+   .movie img {
+      width: 100%;
+   }
 }
