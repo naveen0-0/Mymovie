@@ -16,6 +16,17 @@ function SearchMovie({match}) {
       }
    }
 
+   const EmptyOrNot = () => {
+      if(nowPlayingMovies){
+         return (
+            <div className="nowplayingmovies">
+               {nowPlayingMovies.map(movie=>returnMovie(movie))}
+            </div>
+         )
+      }
+      return <div>Found Nothing, Search Something Else</div>
+   }
+
    useEffect(()=>{
       async function getNowPlayingMovies(){
          let movies = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=4cd9df92b17787ff1bd3f4326a15b903&query=${match.params.name}`);
@@ -26,9 +37,7 @@ function SearchMovie({match}) {
 
    return (
       <div className="nowplaying">
-         <div className="nowplayingmovies">
-            {nowPlayingMovies.map(movie=>returnMovie(movie))}
-         </div>
+         {EmptyOrNot()}
       </div>
    )
 }

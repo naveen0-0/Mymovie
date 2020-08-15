@@ -14,10 +14,31 @@ function NowPlaying() {
       getNowPlayingMovies();
    },[]);
 
+   const returnMovie = (movie) => {
+      if(movie.poster_path){
+         return (
+            <Movie key={movie.id} details={movie}/>
+         )
+      }else{
+         return;
+      }
+   }
+
+   const EmptyOrNot = () => {
+      if(nowPlayingMovies){
+         return (
+            <div className="nowplayingmovies">
+               {nowPlayingMovies.map(movie=>returnMovie(movie))}
+            </div>
+         )
+      }
+      return <div>Found Nothing, Search Something Else</div>
+   }
+
    return (
       <div className="nowplaying">
          <div className="nowplayingmovies">
-            {nowPlayingMovies.map(movie=><Movie key={movie.title} details={movie}/>)}
+            {EmptyOrNot()}
          </div>
       </div>
    )

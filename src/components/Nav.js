@@ -1,8 +1,8 @@
-import React,{useState} from 'react';
+import React,{ useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Nav(){
-   const [input,setInput] = useState("");
+   const [ input,setInput ] = useState("");
 
    const searchInput = (e) => {
       setInput(e.target.value)
@@ -28,12 +28,10 @@ function Nav(){
          <div className="links show">
             <Link to="/" className="link">Home</Link>
             <Link to="/upcoming" className="link">Upcoming</Link>
-
-            <form action={`/search/${input}`}>
-               <input type="search" required onChange={searchInput}/>
-               <button type="submit"><img src={require('../images/icons8-search-24.png')} alt="Search"/></button>
-            </form>
-
+            <div className="searchBox">
+               <input type="search" required onChange={ searchInput }/>
+               <Link to={`/search/${input}`} className="link searchLink">Search</Link>
+            </div>
          </div>
 
          <div className="burger" onClick={showLinks}>
