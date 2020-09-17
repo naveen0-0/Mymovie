@@ -17,14 +17,14 @@ function SearchMovie({match}) {
    }
 
    const EmptyOrNot = () => {
-      if(nowPlayingMovies){
+      // if(nowPlayingMovies){
          return (
             <div className="nowplayingmovies">
                {nowPlayingMovies.map(movie=>returnMovie(movie))}
             </div>
          )
-      }
-      return <div>Found Nothing, Search Something Else</div>
+      // }
+      // return <div>Found Nothing, Search Something Else</div>
    }
 
    useEffect(()=>{

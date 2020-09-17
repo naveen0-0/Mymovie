@@ -29,8 +29,8 @@ function Nav(){
             <Link to="/" className="link">Home</Link>
             <Link to="/upcoming" className="link">Upcoming</Link>
             <div className="searchBox">
-               <input type="search" required onChange={ searchInput }/>
-               <Link to={`/search/${input}`} className="link searchLink">Search</Link>
+               <input type="search" required onChange={ searchInput } placeholder="Search for a movie"/>
+               <Link to={`/search/${input}`} className="link"><img src={require('../images/search.png')} alt="Search"/></Link>
             </div>
          </div>
 

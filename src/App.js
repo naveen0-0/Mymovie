@@ -7,7 +7,7 @@ import FullMovie from './components/FullMovie';
 import Upcoming from './components/Upcoming';
 import SearchMovie from './components/SearchMovie';
 
-//! Styles
+//* Styles
 import './styles/style.css';
 
 function App(){

@@ -1,11 +1,13 @@
-*{
+* {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
    text-decoration: none;
 }
 
-
+body {
+   background-color: #1b1b1b;
+}
 
 .navbar {
    display: flex;
@@ -24,38 +26,45 @@
    display: flex;
 }
 
-.navbar .title .text{
+.navbar .title .text {
    font-size: 40px;
 }
 
 .link {
    color: white;
+   font-family: 'Fira Code', monospace;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
 }
 
 .nowplaying {
    padding: 20px 0px 0px 0px;
 }
 
-.nowplaying .nowplayingmovies{
+.nowplaying .nowplayingmovies {
    display: grid;
-   grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-   gap: 10px;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   gap: 15px;
    width: 98%;
    margin: auto;
 }
 
-.nowplaying .nowplayingmovies img{
+.nowplaying .nowplayingmovies img {
    width: 200px;
    display: block;
    margin: auto;
-   border-radius: 20px;
+   border-radius: 5px;
 }
 
 p {
    text-align: center;
+   color: whitesmoke;
+   font-weight: 500;
+   padding: 5px;
 }
 
-form{
+form {
    display: flex;
    justify-content: space-around;
    align-items: center;
@@ -76,7 +85,7 @@ button {
    border-radius: 3px;
    outline: none;
    border: none;
-   padding:3px;
+   padding: 3px;
    margin-left: 3px;
    cursor: pointer;
 }
@@ -91,7 +100,7 @@ button {
 .burger {
    display: flex;
    flex-direction: column;
-   height: 20px;
+   height: 15px;
    justify-content: space-around;
    border-radius: 3px;
    align-items: center;
@@ -100,8 +109,8 @@ button {
 }
 
 .line {
-   width: 25px;
-   height: 2px;
+   width: 20px;
+   height: 1px;
    background-color: white;
 }
 
@@ -115,7 +124,7 @@ button {
 }
 
 .details {
-   background-color: #d8d8d8;
+   /* background-color: #d8d8d8; */
 }
 
 .details div {
@@ -124,14 +133,17 @@ button {
    align-items: center;
    margin-top: 20px;
 }
+
 .prop {
    width: 30%;
    text-align: center;
    font-size: 18px;
    color: rgb(0, 4, 255);
 }
+
 .value {
    width: 70%;
+   color: whitesmoke;
 }
 
 button {
@@ -147,37 +159,49 @@ button {
    justify-content: space-around;
    align-items: center;
 }
-.searchLink {
-   padding: 5px 10px;
-   border-radius: 4px;
+
+.searchBox img {
+   width: 20px;
 }
 
-.searchLink:hover {
-   transition: all 0.1s ease-in;
-   background-color: white;
-   color: black;
+input[type="search"] {
+   border-radius: 3px;
+   background-color: #1b1b1b;
+   color: whitesmoke;
+   font-family: 'Fira Code', monospace
 }
+
+.loading {
+   font-size: 32px;
+   color: whitesmoke;
+   text-align: center;
+   line-height: 150px;
+}
+
 
 @media screen and (max-width:700px) {
    body {
       width: 100%;
       overflow-x: hidden;
    }
-   
+
    .show {
       transform: translateX(100%);
+      display: none;
    }
 
-   .cross .line1{
-      transform: rotate(45deg) translateX(10px);
+   .cross .line1 {
+      transform: rotate(45deg) translateX(7px);
    }
-   .cross .line2{
+
+   .cross .line2 {
       opacity: 0;
    }
-   .cross .line3{
-      transform: rotate(-45deg) translate(9px);
+
+   .cross .line3 {
+      transform: rotate(-45deg) translate(7px);
    }
-   
+
    .links {
       position: absolute;
       height: 200px;
@@ -185,17 +209,19 @@ button {
       top: 68px;
       background-color: #032541;
    }
+
    .burger {
       display: flex;
    }
-   
-   
+
+
 }
 
-@media screen and (max-width:850px){
+@media screen and (max-width:850px) {
    .movie {
       flex-direction: column;
    }
+
    .movie img {
       width: 100%;
    }

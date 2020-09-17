@@ -4,28 +4,38 @@ import Axios from 'axios';
 export default function FullMovie({match}) {
 
    const [ movie,setMovie ] = useState({});
+   const [ haveMovie, setHaveMovie ] = useState(false);
 
    useEffect(()=>{
       async function fetchMovie(){
          let fetchedMovie = await Axios.get(`https://api.themoviedb.org/3/movie/${match.params.id}?api_key=4cd9df92b17787ff1bd3f4326a15b903`);
          setMovie(fetchedMovie.data);
+         setHaveMovie(true);
       }
       fetchMovie();
    },[match.params.id]);
 
    const Budget = (movie) => {
-      if(movie.budget !== 0) return `${movie.budget} USD`
+      if(movie.budget !== 0) return `${movie.budget.toLocaleString()} USD`
       return "Not Available"
    }
    const Revenue = (movie) => {
-      if(movie.revenue !== 0) return `${movie.revenue} USD`
+      if(movie.revenue !== 0) return `${movie.revenue.toLocaleString()} USD`
       return "Not Available"
    }
    const Tagline = (movie) => {
-      if(movie.revenue) return movie.tagline
+      if(movie.tagline) return movie.tagline
       return "Not Available"
    }
 
+
+   if(!haveMovie){
+      return (
+         <div className="loading">
+            Loading...
+         </div>
+      )
+   }
    return (
       <div className="movie">
       <div>
