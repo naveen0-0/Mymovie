@@ -1,16 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
-import Nav from './components/Nav';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+//! Styles
+import './styles/style.css';
+
+import Nav from './components/Nav';
 import NowPlaying from './components/NowPlaying';
 import FullMovie from './components/FullMovie';
 import Upcoming from './components/Upcoming';
 import SearchMovie from './components/SearchMovie';
 
-//* Styles
-import './styles/style.css';
 
-function App(){
+export default function App(){
   return (
     <div className="App">
       <Router>
@@ -23,5 +24,3 @@ function App(){
     </div>
   )
 }
-
-export default App;

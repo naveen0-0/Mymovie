@@ -32,6 +32,7 @@ export default function FullMovie({match}) {
    if(!haveMovie){
       return (
          <div className="loading">
+            {/* <img src={require('../images/loading.gif')} alt="Loading" className="loading"/> */}
             Loading...
          </div>
       )
