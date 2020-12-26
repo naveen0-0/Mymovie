@@ -51,7 +51,7 @@ export default function FullMovie({ match }) {
          <div className="prop"><span>Budget :</span> {Budget(movie)}</div>
          <div className="prop"><span>Revenue :</span> {Revenue(movie)}</div>
          <div className="prop"><span>Release :</span> {movie.release_date}</div>
-         <div className="prop"><span>Runtime :</span> {movie.runtime}</div>
+         <div className="prop"><span>Runtime :</span> {movie.runtime}mins</div>
          <div className="prop"><span>Tagline :</span> {Tagline(movie)}</div>
 
 
