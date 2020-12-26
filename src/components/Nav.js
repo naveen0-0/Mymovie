@@ -18,20 +18,18 @@ function Nav(){
    return (
       <div className="navbar">
 
-         <div className="title">
+         <Link className="title" to="/">
          <img src={require('../images/icons8-music-48.png')} alt="Music"/>
             <div className="text">
-                MyMovie
+                Moviely
             </div>
-         </div>
+         </Link>
 
          <div className="links show">
-            <Link to="/" className="link">Home</Link>
             <Link to="/upcoming" className="link">Upcoming</Link>
-            <div className="searchBox">
-               <input type="search" required onChange={ searchInput } placeholder="Search for a movie"/>
-               <Link to={`/search/${input}`} className="link"><img src={require('../images/search.png')} alt="Search"/></Link>
-            </div>
+            <form className="searchBox" action={`/search/${input}`}>
+               <input type="search" required onChange={ searchInput } placeholder="Search for a movie Press Enter"/>
+            </form>
          </div>
 
          <div className="burger" onClick={showLinks}>
