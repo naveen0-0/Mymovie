@@ -130,6 +130,7 @@ button {
    border-radius:5px;
    color: rgb(27, 117, 83);
    padding:10px 20px;
+   font-size:15px
 }
 
 .prop span{
@@ -178,10 +179,14 @@ button {
    display: flex;
    justify-content: space-around;
    align-items: center;
+   position: relative;
 }
 
 .searchBox img {
    width: 20px;
+   position: absolute;
+   right: 6px;
+   top: 7px
 }
 
 input[type="search"] {

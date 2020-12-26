@@ -1,8 +1,8 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function Nav(){
-   const [ input,setInput ] = useState("");
+function Nav() {
+   const [input, setInput] = useState("");
 
    const searchInput = (e) => {
       setInput(e.target.value)
@@ -15,21 +15,23 @@ function Nav(){
       burger.classList.toggle('cross');
    }
 
+
    return (
       <div className="navbar">
 
          <Link className="title" to="/">
-         <img src={require('../images/icons8-music-48.png')} alt="Music"/>
+            <img src={require('../images/icons8-music-48.png')} alt="Music" />
             <div className="text">
-                Moviely
+               Moviely
             </div>
          </Link>
 
          <div className="links show">
             <Link to="/upcoming" className="link">Upcoming</Link>
-            <form className="searchBox" action={`/search/${input}`}>
-               <input type="search" required onChange={ searchInput } placeholder="Search for a movie Press Enter"/>
-            </form>
+            <div className="searchBox">
+               <input type="search" required onChange={searchInput} placeholder="Search for a movie" />
+               <Link className="searchImg" to={`/search/${input}`}><img src={require('../images/search.png')} alt="SearchButton"/></Link>
+            </div>
          </div>
 
          <div className="burger" onClick={showLinks}>
