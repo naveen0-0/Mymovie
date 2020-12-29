@@ -12,7 +12,7 @@ function SearchMovie({ match }) {
             <Movie key={movie.id} details={movie} />
          )
       } else {
-         return;
+         return null;
       }
    }
 
